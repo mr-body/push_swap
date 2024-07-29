@@ -6,7 +6,7 @@
 /*   By: waalexan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 07:53:53 by waalexan          #+#    #+#             */
-/*   Updated: 2024/07/29 13:23:52 by waalexan         ###   ########.fr       */
+/*   Updated: 2024/07/29 14:05:47 by waalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,8 +147,26 @@ void	ft_case_more(t_data **a, t_data **b)
             ft_put_min_top(a);
             ft_push_a(a, b);
         }
-        else    
-        {        
+        else
+        { 
+            if (dados_alvos.a_sentido == dados_alvos.b_sentido)
+            {
+                while(((*b)->data != dados_alvos.b_valor))
+                {
+                    if(dados_alvos.b_sentido == -1)
+                        ft_rotate_rotate(a, b);
+                    else if(dados_alvos.b_sentido == 1)
+                        ft_reverse_rotate_rotate(a, b);
+                }
+                while(((*a)->data != dados_alvos.a_valor))
+                {
+                    if(dados_alvos.a_sentido == -1)
+                        ft_rotate_rotate(a, b);
+                    else if(dados_alvos.a_sentido == 1)
+                        ft_reverse_rotate_rotate(a, b);
+                }
+            }
+    
             while((*b)->data != dados_alvos.b_valor)
             {
                 if(dados_alvos.b_sentido == -1)
