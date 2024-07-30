@@ -2,7 +2,7 @@ NAME = push_swap
 
 
 ${NAME}:
-	cc -Wall -Wextra -Werror -o ${NAME} *.c -L./libft -lft
+	cc -Wall -Wextra -Werror -g -o ${NAME} *.c -L./libft -lft
 
 clean:
 	rm -f ${NAME}

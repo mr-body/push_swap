@@ -6,13 +6,13 @@
 /*   By: waalexan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 06:59:15 by waalexan          #+#    #+#             */
-/*   Updated: 2024/07/26 09:26:34 by waalexan         ###   ########.fr       */
+/*   Updated: 2024/07/30 08:13:48 by waalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rotate_a(t_data **a)
+void	ft_rotate_a(t_data **a, int flg)
 {
 	t_data	*top;
 	t_data	*base;
@@ -24,9 +24,11 @@ void	ft_rotate_a(t_data **a)
 	*a = (*a)->next;
 	base->next = top;
 	top->next = NULL;
+	if (flg == 1)
+		ft_printf("ra\n");
 }
 
-void	ft_rotate_b(t_data **b)
+void	ft_rotate_b(t_data **b, int flg)
 {
 	t_data	*top;
 	t_data	*base;
@@ -38,15 +40,11 @@ void	ft_rotate_b(t_data **b)
 	*b = (*b)->next;
 	base->next = top;
 	top->next = NULL;
+	if (flg == 1)
+		ft_printf("rb\n");
 }
 
-void	ft_rotate_rotate(t_data **a, t_data **b)
-{
-	ft_rotate_a(a);
-	ft_rotate_b(b);
-}
-
-void	ft_reverse_rotate_a(t_data **a)
+void	ft_reverse_rotate_a(t_data **a, int flg)
 {
 	t_data	*top;
 	t_data	*base;
@@ -60,9 +58,11 @@ void	ft_reverse_rotate_a(t_data **a)
 	top->next = NULL;
 	base->next = *a;
 	*a = base;
+	if (flg == 1)
+		ft_printf("rra\n");
 }
 
-void	ft_reverse_rotate_b(t_data **b)
+void	ft_reverse_rotate_b(t_data **b, int flg)
 {
 	t_data	*top;
 	t_data	*base;
@@ -76,10 +76,6 @@ void	ft_reverse_rotate_b(t_data **b)
 	top->next = NULL;
 	base->next = *b;
 	*b = base;
-}
-
-void	ft_reverse_rotate_rotate(t_data **a, t_data **b)
-{
-	ft_reverse_rotate_a(a);
-	ft_reverse_rotate_b(b);
+	if (flg == 1)
+		ft_printf("rrb\n");
 }

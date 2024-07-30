@@ -6,7 +6,7 @@
 /*   By: waalexan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 12:17:00 by waalexan          #+#    #+#             */
-/*   Updated: 2024/07/26 12:17:25 by waalexan         ###   ########.fr       */
+/*   Updated: 2024/07/30 08:13:53 by waalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,18 @@ t_data	*ft_pilha_get_last(t_data *list)
 		list = list->next;
 	}
 	return (tmp);
+}
+
+void	ft_reverse_rotate_rotate(t_data **a, t_data **b)
+{
+	ft_reverse_rotate_a(a, 0);
+	ft_reverse_rotate_b(b, 0);
+	ft_printf("rrr\n");
+}
+
+void	ft_rotate_rotate(t_data **a, t_data **b)
+{
+	ft_rotate_a(a, 0);
+	ft_rotate_b(b, 0);
+	ft_printf("rr\n");
 }

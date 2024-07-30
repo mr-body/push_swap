@@ -6,7 +6,7 @@
 /*   By: waalexan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 06:59:15 by waalexan          #+#    #+#             */
-/*   Updated: 2024/07/25 09:02:57 by waalexan         ###   ########.fr       */
+/*   Updated: 2024/07/30 08:12:36 by waalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_push_b(t_data **a, t_data **b)
 	*a = (*a)->next;
 	top->next = *b;
 	*b = top;
+	ft_printf("pb\n");
 }
 
 void	ft_push_a(t_data **a, t_data **b)
@@ -34,4 +35,5 @@ void	ft_push_a(t_data **a, t_data **b)
 	*b = (*b)->next;
 	top->next = *a;
 	*a = top;
+	ft_printf("pa\n");
 }

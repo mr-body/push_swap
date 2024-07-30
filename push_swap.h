@@ -6,7 +6,7 @@
 /*   By: waalexan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 06:04:38 by waalexan          #+#    #+#             */
-/*   Updated: 2024/07/29 13:13:23 by waalexan         ###   ########.fr       */
+/*   Updated: 2024/07/30 07:59:58 by waalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,18 @@ void				ft_free_mariz(char **matriz);
 void				ft_push_b(t_data **a, t_data **b);
 void				ft_push_a(t_data **a, t_data **b);
 
-void				ft_swap_a(t_data **a);
-void				ft_swap_b(t_data **a);
+void				ft_swap_a(t_data **a, int flg);
+void				ft_swap_b(t_data **a, int flg);
 void				ft_swap_swap(t_data **a, t_data **b);
 
-void				ft_rotate_a(t_data **a);
-void				ft_rotate_b(t_data **b);
-void				ft_reverse_rotate_a(t_data **a);
-void				ft_reverse_rotate_b(t_data **b);
+void				ft_rotate_a(t_data **a, int flg);
+void				ft_rotate_b(t_data **b, int flg);
+void				ft_reverse_rotate_a(t_data **a, int flg);
+void				ft_reverse_rotate_b(t_data **b, int flg);
 void				ft_rotate_rotate(t_data **a, t_data **b);
 void				ft_reverse_rotate_rotate(t_data **a, t_data **b);
+
+void				ft_rrr_rr(t_data **a, t_data **b, t_alvo dados_alvos);
 
 void				ft_case_two(t_data **a);
 void				ft_case_three(t_data **a);
