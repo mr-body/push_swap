@@ -6,7 +6,7 @@
 /*   By: waalexan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 12:17:00 by waalexan          #+#    #+#             */
-/*   Updated: 2024/07/30 08:13:53 by waalexan         ###   ########.fr       */
+/*   Updated: 2024/07/31 10:15:51 by waalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_data	*ft_pilha_get_top(t_data *list)
 
 t_data	*ft_pilha_get_last(t_data *list)
 {
-	t_data *tmp;
+	t_data	*tmp;
 
 	while (list)
 	{

@@ -6,7 +6,7 @@
 /*   By: waalexan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 04:50:14 by waalexan          #+#    #+#             */
-/*   Updated: 2024/07/30 11:36:42 by waalexan         ###   ########.fr       */
+/*   Updated: 2024/07/31 12:06:33 by waalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ int	main(int ac, char **av)
 		ft_case_three(&pilha1);
 	else
 		ft_case_more(&pilha1, &pilha2);
-	// ft_printf("-------------\n");
-	// ft_print_list(pilha1);
 	ft_free_list(pilha1);
 	ft_free_list(pilha2);
 	return (0);

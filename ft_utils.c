@@ -6,7 +6,7 @@
 /*   By: waalexan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 09:25:39 by waalexan          #+#    #+#             */
-/*   Updated: 2024/07/26 12:16:52 by waalexan         ###   ########.fr       */
+/*   Updated: 2024/07/31 12:03:03 by waalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,20 @@ int	ft_count_list(t_data *list)
 		list = list->next;
 	}
 	return (i);
+}
+
+int	ft_verif_sequence(t_data *list)
+{
+	int	tmp;
+
+	tmp = list->data;
+	while (list)
+	{
+		if (list->data >= tmp)
+			tmp = list->data;
+		else
+			return (0);
+		list = list->next;
+	}
+	return (1);
 }

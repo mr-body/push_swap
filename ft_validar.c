@@ -6,7 +6,7 @@
 /*   By: waalexan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 04:57:54 by waalexan          #+#    #+#             */
-/*   Updated: 2024/07/27 08:15:10 by waalexan         ###   ########.fr       */
+/*   Updated: 2024/07/31 12:02:54 by waalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,6 @@ int	ft_verif_repeat(t_data *list, int n)
 	while (list)
 	{
 		if (list->data == n)
-			return (0);
-		list = list->next;
-	}
-	return (1);
-}
-
-int	ft_verif_sequence(t_data *list)
-{
-	int	tmp;
-
-	tmp = list->data;
-	while (list)
-	{
-		if (list->data >= tmp)
-			tmp = list->data;
-		else
 			return (0);
 		list = list->next;
 	}
@@ -69,6 +53,15 @@ int	ft_validar_data_two(char **av, int i, t_data **list)
 	return (1);
 }
 
+int	ft_case_one_arg(char **rede)
+{
+	if (!ft_isbigdigit(rede[0]))
+		return (0);
+	if (!ft_isvalid(atoi(rede[0])))
+		return (0);
+	return (0);
+}
+
 int	ft_global_valid(int ac, char **av, t_data **pilha1)
 {
 	char	**rede;
@@ -82,9 +75,7 @@ int	ft_global_valid(int ac, char **av, t_data **pilha1)
 			i++;
 		if (i == 1)
 		{
-			if (!ft_isbigdigit(rede[0]))
-				return (ft_free_mariz(rede), ft_printf("Error\n"), 0);
-			if (!ft_isvalid(atoi(rede[0])))
+			if (!ft_case_one_arg(rede))
 				return (ft_free_mariz(rede), ft_printf("Error\n"), 0);
 		}
 		else if (!ft_validar_data_two(rede, i, pilha1))

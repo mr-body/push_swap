@@ -6,7 +6,7 @@
 /*   By: waalexan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 13:53:08 by waalexan          #+#    #+#             */
-/*   Updated: 2024/07/25 05:44:10 by waalexan         ###   ########.fr       */
+/*   Updated: 2024/07/31 11:45:22 by waalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,29 @@ void	ft_free_mariz(char **matriz)
 	while (matriz[++i])
 		free(matriz[i]);
 	free(matriz);
+}
+
+void	ft_put_min_top(t_data **a)
+{
+	int	min;
+	int	sentido;
+	int	index;
+
+	min = ft_pilha_get_min(*a);
+	index = ft_get_index(*a, min);
+	if (index <= ft_count_list(*a) / 2)
+	{
+		sentido = -1;
+	}
+	else if (index > ft_count_list(*a) / 2)
+	{
+		sentido = 1;
+	}
+	while ((*a)->data != min)
+	{
+		if (sentido == -1)
+			ft_rotate_a(a, 1);
+		else if (sentido == 1)
+			ft_reverse_rotate_a(a, 1);
+	}
 }

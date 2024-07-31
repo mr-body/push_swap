@@ -6,7 +6,7 @@
 /*   By: waalexan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 06:04:38 by waalexan          #+#    #+#             */
-/*   Updated: 2024/07/30 07:59:58 by waalexan         ###   ########.fr       */
+/*   Updated: 2024/07/31 11:49:26 by waalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,21 @@ typedef struct s_alvo
 {
 	int				a_valor;
 	int				b_valor;
-	int				a_index;
-	int				b_index;
 	int				a_sentido;
 	int				b_sentido;
 }					t_alvo;
+
+typedef struct s_vars
+{
+	long int		n_plus_b;
+	int				pilha_a;
+	int				pilha_b;
+	int				sentido_a;
+	int				sentido_b;
+	int				index;
+	int				value;
+	int				i;
+}					t_vars;
 
 void				ft_init_list(t_data **list, int value);
 void				ft_print_list(t_data *list);
@@ -50,6 +60,8 @@ int					ft_global_valid(int ac, char **av, t_data **pilha1);
 
 int					ft_pilha_get_max(t_data *list);
 int					ft_pilha_get_min(t_data *list);
+int					ft_get_best_option(t_data **a, int b);
+int					ft_get_index(t_data *a, int value);
 int					ft_count_list(t_data *list);
 
 t_data				*ft_pilha_get_top(t_data *list);
@@ -77,5 +89,8 @@ void				ft_rrr_rr(t_data **a, t_data **b, t_alvo dados_alvos);
 void				ft_case_two(t_data **a);
 void				ft_case_three(t_data **a);
 void				ft_case_more(t_data **a, t_data **b);
+
+t_alvo				ft_get_nplusb(t_data **a, t_data **b);
+void				ft_put_min_top(t_data **a);
 
 #endif
