@@ -6,7 +6,7 @@
 /*   By: waalexan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 06:04:38 by waalexan          #+#    #+#             */
-/*   Updated: 2024/07/31 11:49:26 by waalexan         ###   ########.fr       */
+/*   Updated: 2024/08/01 06:25:23 by waalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_vars
 	int				index;
 	int				value;
 	int				i;
+	int				arg;
 }					t_vars;
 
 void				ft_init_list(t_data **list, int value);

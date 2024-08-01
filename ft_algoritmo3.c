@@ -6,7 +6,7 @@
 /*   By: waalexan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 07:58:31 by waalexan          #+#    #+#             */
-/*   Updated: 2024/07/31 13:18:27 by waalexan         ###   ########.fr       */
+/*   Updated: 2024/08/01 06:27:07 by waalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,36 +45,33 @@ int	ft_case_rrr_or_rr(int valor, t_data **a, t_data **b, int sentido)
 	}
 	return (n_opt + 1);
 }
-	
-void	ft_set_alvos(t_vars *vars, t_alvo *dados, int valor, t_data **a,
-		t_data **b)
+
+void	ft_set_alvos(t_vars *vars, t_alvo *dados, t_data **a, t_data **b)
 {
 	if (vars->pilha_a + vars->pilha_b < vars->n_plus_b)
 	{
 		vars->n_plus_b = vars->pilha_a + vars->pilha_b;
 		dados->a_valor = vars->value;
 		dados->a_sentido = vars->sentido_a;
-		dados->b_valor = valor;
+		dados->b_valor = vars->arg;
 		dados->b_sentido = vars->sentido_b;
 	}
-	if (ft_case_rrr_or_rr(valor, a, b, 1) < vars->n_plus_b)
+	if (ft_case_rrr_or_rr(vars->arg, a, b, 1) < vars->n_plus_b)
 	{
-		vars->n_plus_b = ft_case_rrr_or_rr(valor, a, b, 1);
+		vars->n_plus_b = ft_case_rrr_or_rr(vars->arg, a, b, 1);
 		dados->a_valor = vars->value;
 		dados->a_sentido = 1;
-		dados->b_valor = valor;
+		dados->b_valor = vars->arg;
 		dados->b_sentido = 1;
 	}
-	if (ft_case_rrr_or_rr(valor, a, b, -1) < vars->n_plus_b)
+	if (ft_case_rrr_or_rr(vars->arg, a, b, -1) < vars->n_plus_b)
 	{
-		vars->n_plus_b = ft_case_rrr_or_rr(valor, a, b, -1);
+		vars->n_plus_b = ft_case_rrr_or_rr(vars->arg, a, b, -1);
 		dados->a_valor = vars->value;
 		dados->a_sentido = -1;
-		dados->b_valor = valor;
+		dados->b_valor = vars->arg;
 		dados->b_sentido = -1;
 	}
-	// (void)b;
-	// (void)a;
 }
 
 void	ft_set_sentidos(t_data **a, t_data **b, t_vars *vars)
@@ -115,7 +112,8 @@ t_alvo	ft_get_nplusb(t_data **a, t_data **b)
 		vars.value = ft_get_best_option(a, tmp->data);
 		vars.index = ft_get_index(*a, vars.value);
 		ft_set_sentidos(a, b, &vars);
-		ft_set_alvos(&vars, &dados, tmp->data, a, b);
+		vars.arg = tmp->data;
+		ft_set_alvos(&vars, &dados, a, b);
 		tmp = tmp->next;
 		vars.i++;
 	}
