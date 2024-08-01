@@ -6,7 +6,7 @@
 /*   By: waalexan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 13:53:08 by waalexan          #+#    #+#             */
-/*   Updated: 2024/07/31 11:45:22 by waalexan         ###   ########.fr       */
+/*   Updated: 2024/08/01 07:35:28 by waalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,14 @@ void	ft_put_min_top(t_data **a)
 		else if (sentido == 1)
 			ft_reverse_rotate_a(a, 1);
 	}
+}
+
+int	ft_count_array(char **rede)
+{
+	int	i;
+
+	i = 0;
+	while (rede[i])
+		i++;
+	return (i);
 }

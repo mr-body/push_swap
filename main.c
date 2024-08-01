@@ -6,7 +6,7 @@
 /*   By: waalexan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 04:50:14 by waalexan          #+#    #+#             */
-/*   Updated: 2024/07/31 12:06:33 by waalexan         ###   ########.fr       */
+/*   Updated: 2024/08/01 07:34:38 by waalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	main(int ac, char **av)
 	t_data	*pilha1;
 	t_data	*pilha2;
 
+	if (ac == 1)
+		return (0);
 	pilha1 = NULL;
 	pilha2 = NULL;
 	if (!ft_global_valid(ac, av, &pilha1))

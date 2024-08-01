@@ -6,7 +6,7 @@
 /*   By: waalexan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 04:57:54 by waalexan          #+#    #+#             */
-/*   Updated: 2024/07/31 12:02:54 by waalexan         ###   ########.fr       */
+/*   Updated: 2024/08/01 07:35:00 by waalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ int	ft_validar_data_two(char **av, int i, t_data **list)
 int	ft_case_one_arg(char **rede)
 {
 	if (!ft_isbigdigit(rede[0]))
-		return (0);
+		return (ft_free_mariz(rede), ft_printf("Error\n"), 0);
 	if (!ft_isvalid(atoi(rede[0])))
-		return (0);
-	return (0);
+		return (ft_free_mariz(rede), ft_printf("Error\n"), 0);
+	return (ft_free_mariz(rede), 0);
 }
 
 int	ft_global_valid(int ac, char **av, t_data **pilha1)
@@ -70,13 +70,13 @@ int	ft_global_valid(int ac, char **av, t_data **pilha1)
 	if (ac == 2)
 	{
 		rede = ft_split(av[1], ' ');
-		i = 0;
-		while (rede[i])
-			i++;
-		if (i == 1)
+		i = ft_count_array(rede);
+		if (i == 0)
+			return (ft_free_mariz(rede), 0);
+		else if (i == 1)
 		{
 			if (!ft_case_one_arg(rede))
-				return (ft_free_mariz(rede), ft_printf("Error\n"), 0);
+				return (0);
 		}
 		else if (!ft_validar_data_two(rede, i, pilha1))
 			return (ft_free_mariz(rede), ft_free_list(*pilha1),

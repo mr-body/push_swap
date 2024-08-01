@@ -6,7 +6,7 @@
 /*   By: waalexan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 06:04:38 by waalexan          #+#    #+#             */
-/*   Updated: 2024/08/01 06:25:23 by waalexan         ###   ########.fr       */
+/*   Updated: 2024/08/01 07:35:57 by waalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void				ft_init_list(t_data **list, int value);
 void				ft_print_list(t_data *list);
 
 int					ft_isvalid(long n);
+int					ft_count_array(char **rede);
 int					ft_verif_repeat(t_data *list, int n);
 int					ft_verif_sequence(t_data *list);
 int					ft_validar_data_one(char **av, int i, t_data **list);
